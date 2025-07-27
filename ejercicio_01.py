@@ -1,4 +1,18 @@
+peliculas=[]
+def add_movie():
+    how=int(input("Ingrese cuantas películas desea agregar: "))
+    for i in range(how):
+        for j in range(3):
+            name=input("Titulo:")
+            year=input("Año:")
+            genero=input("Genero:")
+
+
+
+
+
 while True:
+
     print("1.Agregar Películas")
     print("2.Mostrar películas agregadas")
     print("3.Buscar películas por genero")
