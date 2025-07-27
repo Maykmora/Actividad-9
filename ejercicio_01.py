@@ -1,5 +1,6 @@
 peliculas=[]
 def add_movie():
+    print("\n--AGREGAR PELICULA--")
     how=int(input("Ingrese cuantas películas desea agregar: "))
     for i in range(how):
         print(f"\nIngrese la información de la película no.{i+1}")
@@ -20,6 +21,7 @@ def show():
         print("La lista esta vacía")
 
 def search():
+    print("\n--BUSCADOR--")
     encontradas=[]
     genero=input("Ingrese el genero que desea buscar:").lower()
     for p in peliculas:
@@ -63,7 +65,18 @@ def registradas():
     else:
         print("\nEL catalogo de películas esta vacío")
 
+def old():
+    if peliculas:
+        years=[]
+        for p in peliculas:
+            years.append(p[1])
 
+        minimo=min(years)
+        for p in peliculas:
+            if p[1] == minimo:
+                print(f"La pelicula mas antigua es: Titulo:{p[0]}, Género: {p[2]} , Año:{minimo}")
+    else:
+        print("\nEL catalogo de películas esta vacío")
 
 
 while True:
@@ -87,6 +100,7 @@ while True:
             delete()
         case "5":
             registradas()
+            old()
         case "6":
             print("Saliendo del programa...")
             break
