@@ -44,6 +44,26 @@ def delete():
     else:
         print("\nEL catalogo de películas esta vacío")
 
+def registradas():
+    if peliculas:
+        print("\n--ESTADÍSTICAS--")
+        print(f"Existen {len(peliculas)} películas registradas")
+        generos_unicos=[]
+        for p in peliculas:
+            if p[2] not in generos_unicos:
+                generos_unicos.append(p[2])
+
+        for genero in generos_unicos:
+            contador=0
+            for p in peliculas:
+                if p[2]==genero:
+                    contador+=1
+            print(f"{genero}:{contador}")
+
+    else:
+        print("\nEL catalogo de películas esta vacío")
+
+
 
 
 while True:
@@ -66,7 +86,7 @@ while True:
         case "4":
             delete()
         case "5":
-            print()
+            registradas()
         case "6":
             print("Saliendo del programa...")
             break
