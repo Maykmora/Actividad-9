@@ -33,6 +33,19 @@ def search():
     else:
         print("No se encontraron películas con ese género.")
 
+def delete():
+    if peliculas:
+        print(peliculas)
+        name_dos=input("Ingrese el nombre exacto de la película que desea eliminar ").lower()
+        for p in peliculas:
+            if p[0]==name_dos.lower():
+                peliculas.remove(p)
+                print(f"La pelicula '{name_dos}' fue eliminada correctamente")
+    else:
+        print("\nEL catalogo de películas esta vacío")
+
+
+
 while True:
     print("\n--MENÚ--")
     print("1.Agregar Películas")
@@ -51,7 +64,7 @@ while True:
         case "3":
             search()
         case "4":
-            print()
+            delete()
         case "5":
             print()
         case "6":
